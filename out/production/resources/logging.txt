@@ -1,0 +1,76 @@
+INFO, Sat May 04 10:54:01 EEST 2019, PROGRAM STARTED, hospital.Logger
+
+INFO, Sat May 04 10:54:01 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:02 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:02 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:03 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:03 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:04 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:04 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:05 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:05 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:06 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:06 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:07 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:07 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:08 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:08 EEST 2019, Add patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print patients method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Remove patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Remove patient method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Check if patient in hospital by ID method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Check if patient in hospital by name method called, hospital.Logger
+
+SEVERE, Sat May 04 10:54:09 EEST 2019, Program termination with stack trace:
+!!! Exception: Patient: XXX not found!!!
+	at hospital.Hospital.checkIfPatientInHospitalByName(Hospital.java:303)
+	at services.ClientServices.checkIfPatientInHospitalByName(ClientServices.java:14)
+	at Main.main(Main.java:123)
+, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Get amount to pay for patient by ID method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Get amount to pay for patient by name method called, hospital.Logger
+
+SEVERE, Sat May 04 10:54:09 EEST 2019, Program termination with stack trace:
+!!! Exception: Patient: Andrei not found!!!
+	at hospital.Hospital.amountToPayForPatientByName(Hospital.java:325)
+	at services.ClientServices.amountToPayForPatientByName(ClientServices.java:22)
+	at Main.main(Main.java:155)
+, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Get floor number for specific room method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print patients method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print number of available method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print list of departments method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print list of doctors method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print doctors for each department method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print bills ascending method called, hospital.Logger
+
+INFO, Sat May 04 10:54:09 EEST 2019, Print bills descending method called, hospital.Logger
+
