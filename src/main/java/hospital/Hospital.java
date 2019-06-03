@@ -7,8 +7,10 @@ import exceptions.InvalidRoomNumber;
 import exceptions.NoRoomsAvailable;
 import people.*;
 import services.CSVReaderWriter;
+import utilities.Database;
 import utilities.Utilities;
 
+import javax.xml.crypto.Data;
 import java.io.File;
 import java.util.*;
 
@@ -80,6 +82,8 @@ public class Hospital {
         file = new File("./src/main/resources/logging.txt");
         file.delete();
 
+        Database.cleareDatabases();
+
         Departments[] departmentsName = Departments.values();
 
         rooms = CSVReaderWriter.csvReader("room");
@@ -129,21 +133,25 @@ public class Hospital {
                 if (disease.equals("kidneys") && room.getRoom() == Rooms.INTERNAL_MEDICINE) {
                     room.setAvailability(false);
                     rooms = CSVReaderWriter.csvReader("room");
+                    Database.updateObject(room);
                     return room.getRoomNo();
                 }
                 if (disease.equals("heart") && room.getRoom() == Rooms.CARDIOLOGY) {
                     room.setAvailability(false);
                     rooms = CSVReaderWriter.csvReader("room");
+                    Database.updateObject(room);
                     return room.getRoomNo();
                 }
                 if (disease.equals("surgery") && room.getRoom() == Rooms.GENERAL_SURGERY) {
                     room.setAvailability(false);
                     rooms = CSVReaderWriter.csvReader("room");
+                    Database.updateObject(room);
                     return room.getRoomNo();
                 }
                 if (disease.equals("brain") && room.getRoom() == Rooms.NEUROLOGY) {
                     room.setAvailability(false);
                     rooms = CSVReaderWriter.csvReader("room");
+                    Database.updateObject(room);
                     return room.getRoomNo();
                 }
             }
@@ -180,8 +188,8 @@ public class Hospital {
     // -----------------------------------------------------------------------------------------------------------------
 
     public void addPatient(Patient patient) throws NoRoomsAvailable { // Add new patient in the system.
-        numberOfPatients++; // increment number of patients.
-        numberOfBills++; // increment number of bills;
+        numberOfPatients += 11; // increment number of patients.
+        numberOfBills += 11; // increment number of bills;
 
         int roomNo = getFreeRoomNumberForDisease(patient.getDisease()); // get a free room for the patient.
 
@@ -204,7 +212,9 @@ public class Hospital {
     }
 
     public void removePatient(int patientNo) throws InvalidPatient { // Remove patient from the system.
-        numberOfPatients--; // decrement the number of patients.
+//        numberOfPatients--; // decrement the number of patients.
+
+        System.out.println("Stergere" + patientNo);
 
         for (Patient patient : patients) {
             if (patient.getPatientID() == patientNo) {
@@ -221,6 +231,10 @@ public class Hospital {
                 patients.remove(patient); // remove patient from the list of patients.
 
                 CSVReaderWriter.csvWriter(patients);
+
+                System.out.println("PATIENT FOUND FOR DELETION");
+
+                Database.removeObject(patient);
 
                 return;
             }
@@ -259,10 +273,11 @@ public class Hospital {
 
     public void listOfDoctors() {
         // employees[0] is the receptionist.
+        Database.readObjects("doctors");
 
-        for (int i = 1; i < numberOfEmployees; ++i) {
-            employees.get(i).printInformation();
-        }
+//        for (int i = 1; i < numberOfEmployees; ++i) {
+//            employees.get(i).printInformation();
+//        }
     }
 
     public void printDoctorsForEachDepartment() {

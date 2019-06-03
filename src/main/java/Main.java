@@ -3,12 +3,11 @@ import exceptions.InvalidRoomNumber;
 import exceptions.NoRoomsAvailable;
 import hospital.Hospital;
 import people.Patient;
-import services.ClientServices;
-import services.HospitalSerivces;
-import services.MyLogger;
-import services.Services;
+import services.*;
 import utilities.Utilities;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -31,6 +30,8 @@ public class Main {
         }
 
         logger.info("PROGRAM STARTED");
+
+        LoginInterface loginInterface = new LoginInterface(hospital);
 
         boolean foundException = false;
 

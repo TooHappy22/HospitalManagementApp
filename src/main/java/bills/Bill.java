@@ -73,6 +73,17 @@ public class Bill implements Comparable<Bill> {
                         Utilities.formatDateAndTime(billDate));
     }
 
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "billNo=" + billNo +
+                ", patientName='" + patientName + '\'' +
+                ", patientID=" + patientID +
+                ", amount=" + amount +
+                ", billDate=" + billDate +
+                '}';
+    }
+
     // -----------------------------------------------------------------------------------------------------------------
     // endregion
 }
