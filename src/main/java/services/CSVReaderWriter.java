@@ -12,8 +12,8 @@ import org.apache.commons.csv.CSVRecord;
 import people.Doctor;
 import people.Patient;
 import people.Receptionist;
+import utilities.Database;
 
-import javax.print.Doc;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Writer;
@@ -164,6 +164,8 @@ public class CSVReaderWriter {
                     Patient patient = Patient.class.cast(object);
                     csvPrinter.printRecord(patient.getName(), patient.getPhoneNumber(), patient.getAge(), patient.getDisease());
 
+                    Database.addObject((T) patient);
+
                     csvPrinter.flush();
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -178,6 +180,8 @@ public class CSVReaderWriter {
                     //Writing records in the generated CSV file
                     Bill bill = Bill.class.cast(object);
                     csvPrinter.printRecord(bill.getBillNo(), bill.getPatientName(), bill.getPatientID(), bill.getAmount(), bill.getBillDate());
+
+                    Database.addObject((T) bill);
 
                     csvPrinter.flush();
                 } catch (IOException ex) {
@@ -199,6 +203,9 @@ public class CSVReaderWriter {
                     for (CSVRecord csvRecord: csvParser) {
                         //Accessing the values by column header name
                         Doctor newDoctor = new Doctor(csvRecord.get("Doctor Name"), csvRecord.get("Phone number"), Integer.parseInt(csvRecord.get("age")), Integer.parseInt(csvRecord.get("ID")), Departments.valueOf(csvRecord.get("department")), Specializations.valueOf(csvRecord.get("specialization")));
+
+                        Database.addObject((T) newDoctor);
+
                         result.add((T) newDoctor);
                     }
                 } catch (IOException ex) {
@@ -213,6 +220,9 @@ public class CSVReaderWriter {
                     for (CSVRecord csvRecord: csvParser) {
                         //Accessing the values by column header name
                         Receptionist newReceptionist = new Receptionist(csvRecord.get("Name"), csvRecord.get("Phone number"), Integer.parseInt(csvRecord.get("age")), Integer.parseInt(csvRecord.get("ID")));
+
+                        Database.addObject((T) newReceptionist);
+
                         result.add((T) newReceptionist);
                     }
                 } catch (IOException ex) {
@@ -241,6 +251,9 @@ public class CSVReaderWriter {
                     for (CSVRecord csvRecord: csvParser) {
                         //Accessing the values by column header name
                         Room newRoom = new Room(Rooms.valueOf(csvRecord.get("Room")), Integer.parseInt(csvRecord.get("Number")), Integer.parseInt(csvRecord.get("Floor")), csvRecord.get("Availability").equals("available") ? true : false);
+
+                        Database.addObject((T) newRoom);
+
                         result.add((T) newRoom);
                     }
                 } catch (IOException ex) {

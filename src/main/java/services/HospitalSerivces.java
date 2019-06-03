@@ -5,6 +5,9 @@ import exceptions.InvalidRoomNumber;
 import exceptions.NoRoomsAvailable;
 import hospital.Hospital;
 import people.Patient;
+import utilities.Database;
+
+import javax.swing.*;
 
 public class HospitalSerivces {
     public static void addPatient(Patient patient, Hospital hospital) throws NoRoomsAvailable {
@@ -40,7 +43,13 @@ public class HospitalSerivces {
     }
 
     public static void numberOfAvailableRooms(Hospital hospital) {
-        System.out.println("Number of available rooms: " + hospital.numberOfAvailableRooms());
+        Database.readObjects("rooms");
+//        System.out.println("Number of available rooms: " + hospital.numberOfAvailableRooms());
+    }
+
+    public static JLabel JLabelNumberOfAvailableRooms(Hospital hospital) {
+        return Database.JLabelReadObject("rooms");
+//        System.out.println("Number of available rooms: " + hospital.numberOfAvailableRooms());
     }
 
     public static void getFloorNumberForRoom(int roomNo, Hospital hospital) throws InvalidRoomNumber {
@@ -52,14 +61,32 @@ public class HospitalSerivces {
     }
 
     public static void printBillsAscending(Hospital hospital) {
-        hospital.printBillsAscending();
+        Database.readObjects("bills");
+//        hospital.printBillsAscending();
     }
 
     public static void printBillsDescending(Hospital hospital) {
-        hospital.printBillsDescending();
+        Database.readObjects("bills");
+//        hospital.printBillsDescending();
     }
 
     public static void printPatients(Hospital hospital) {
-        hospital.printPatients();
+        Database.readObjects("patients");
+//        hospital.printPatients();
+    }
+
+    public static String getPatients(Hospital hospital) {
+        return Database.readObjectsToString("patients");
+//        hospital.printPatients();
+    }
+
+    public static String getDoctors(Hospital hospital) {
+        return Database.readObjectsToString("doctors");
+//        hospital.printPatients();
+    }
+
+    public static String getBills(Hospital hospital) {
+        return Database.readObjectsToString("bills");
+//        hospital.printPatients();
     }
 }
