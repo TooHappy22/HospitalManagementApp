@@ -305,38 +305,34 @@ public class Database {
 //                    ex.getErrorCode();
 //                }
 //                break;
-//            case "people.Patient":
-//                try {
-//                    // Add receptionist to database
-//                    Patient patient = Patient.class.cast(object);
-//
-//                    System.out.println("Incercam sa adaugam in baza de date: " + patient.toString());
-//
-//                    connection = DriverManager.getConnection(URL, user, pass);
-//
-//                    String querySQL = "INSERT INTO patients VALUES(?, ?, ?, ?, ?, ?, ?)";
-//                    PreparedStatement statement = connection.prepareStatement(querySQL);
-//                    statement.setString(1, patient.getName());
-//                    statement.setString(2, patient.getPhoneNumber());
-//                    statement.setInt(3, patient.getAge());
-//                    statement.setInt(4, patient.getPatientID());
-//                    statement.setInt(5, patient.getRoomNo());
-//                    statement.setString(6, patient.getDisease());
-//                    statement.setInt(7, patient.getBillToPay().getBillNo());
-//
-//                    int n = statement.executeUpdate();
-//                    System.out.println("Modified " + n + " records");
-//
-//                } catch (SQLException ex) {
-//                    ex.getErrorCode();
-//                }
-//                try {
-//                    if (connection != null) {
-//                        connection.close();
-//                    }
-//                } catch (SQLException ex) {
-//                    ex.getErrorCode();
-//                }
+            case "people.Patient":
+                try {
+                    // Edit patient to database
+                    Patient patient = Patient.class.cast(object);
+
+                    System.out.println("Incercam sa editam in baza de date: " + patient.toString());
+
+                    connection = DriverManager.getConnection(URL, user, pass);
+
+                    System.out.println(patient.getDisease());
+
+                    String querySQL = "UPDATE patients SET name = ? WHERE id = ?";
+                    PreparedStatement statement = connection.prepareStatement(querySQL);
+                    statement.setString(1, patient.getName());
+                    statement.setInt(2, patient.getPatientID());
+
+                    int n = statement.executeUpdate();
+                    System.out.println("Modified " + n + " records");
+                } catch (SQLException ex) {
+                    ex.getErrorCode();
+                }
+                try {
+                    if (connection != null) {
+                        connection.close();
+                    }
+                } catch (SQLException ex) {
+                    ex.getErrorCode();
+                }
 //            case "bills.Bill":
 //                try {
 //                    // Add bills to database

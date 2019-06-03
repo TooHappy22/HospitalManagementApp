@@ -11,7 +11,7 @@ public class MainMenuInterface extends JFrame implements ActionListener {
     private Hospital hospital;
 
     private JFrame frame;
-    private JButton availableRoomsButton, printBillsButton, printDoctorsButton, printPatientsButton, garbageButton, addPatientButton, removePatientButton;
+    private JButton availableRoomsButton, printBillsButton, printDoctorsButton, printPatientsButton, garbageButton, addPatientButton, removePatientButton, editPatientButton;
 
     public MainMenuInterface(Hospital hospital) {
         this.hospital = hospital;
@@ -26,6 +26,7 @@ public class MainMenuInterface extends JFrame implements ActionListener {
         printPatientsButton = new JButton("Print patients");
         addPatientButton = new JButton("Add patient");
         removePatientButton = new JButton("Remove patient");
+        editPatientButton = new JButton("Edit patient");
         garbageButton = new JButton("");
 
         availableRoomsButton.setBounds(220, 50, 200, 30);
@@ -34,6 +35,7 @@ public class MainMenuInterface extends JFrame implements ActionListener {
         printPatientsButton.setBounds(220, 140, 200, 30);
         addPatientButton.setBounds(220, 170, 200, 30);
         removePatientButton.setBounds(220, 200, 200, 30);
+        editPatientButton.setBounds(220, 230, 200, 30);
         garbageButton.setBounds(220, 120, 200, 30);
 
         frame.add(availableRoomsButton);
@@ -42,6 +44,7 @@ public class MainMenuInterface extends JFrame implements ActionListener {
         frame.add(printPatientsButton);
         frame.add(addPatientButton);
         frame.add(removePatientButton);
+        frame.add(editPatientButton);
         frame.add(garbageButton);
 
         availableRoomsButton.addActionListener(this);
@@ -50,6 +53,7 @@ public class MainMenuInterface extends JFrame implements ActionListener {
         printPatientsButton.addActionListener(this);
         addPatientButton.addActionListener(this);
         removePatientButton.addActionListener(this);
+        editPatientButton.addActionListener(this);
 
 
         frame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -78,6 +82,9 @@ public class MainMenuInterface extends JFrame implements ActionListener {
                 break;
             case "Remove patient":
                 RemovePatientInterface removePatientInterface = new RemovePatientInterface(hospital);
+                break;
+            case "Edit patient":
+                EditPatientInterface editPatientInterface = new EditPatientInterface(hospital);
                 break;
         }
     }

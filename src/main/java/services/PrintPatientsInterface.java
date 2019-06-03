@@ -25,11 +25,10 @@ public class PrintPatientsInterface extends JFrame {
         // create the middle panel components
 
         JTextArea display = new JTextArea ( 16, 58 );
-        display.setEditable ( false ); // set textArea non-editable
+        display.setEditable (false);
         JScrollPane scroll = new JScrollPane ( display );
         scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
 
-        //Add Textarea in to middle panel
         middlePanel.add (scroll);
 
         String patients = HospitalSerivces.getPatients(hospital);
@@ -38,8 +37,8 @@ public class PrintPatientsInterface extends JFrame {
 
         frame.add ( middlePanel );
         frame.pack ();
-        frame.setLocationRelativeTo ( null );
-        frame.setVisible ( true );
+        frame.setLocationRelativeTo (null);
+        frame.setVisible (true);
 
         frame.setResizable(false);
     }

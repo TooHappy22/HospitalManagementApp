@@ -19,6 +19,10 @@ public abstract class Person {
         return phoneNumber;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getAge() {
         return age;
     }

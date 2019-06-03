@@ -22,11 +22,21 @@ public class Patient extends Person {
         this.disease = disease;
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
+    public Patient(String name, String phoneNumber, int age, int patientID, String disease) {
+        super(name, phoneNumber, age);
+        this.patientID = patientID;
+        this.disease = disease;
+    }
+
+// -----------------------------------------------------------------------------------------------------------------
     // endregion
 
     // region Accessors
     // -----------------------------------------------------------------------------------------------------------------
+
+    public void setDisease(String disease) {
+        this.disease = disease;
+    }
 
     public int getPatientID() {
         return patientID;

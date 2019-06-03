@@ -1,101 +1,89 @@
-INFO, Mon Jun 03 06:41:50 EEST 2019, PROGRAM STARTED, hospital.Logger
+INFO, Mon Jun 03 09:56:36 EEST 2019, PROGRAM STARTED, hospital.Logger
 
-INFO, Mon Jun 03 06:41:51 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:36 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:41:54 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:39 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:41:56 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:41 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:41:58 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:43 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:00 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:45 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:02 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:47 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:03 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:50 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:05 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:51 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:07 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:53 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:09 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:55 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:10 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:57 EEST 2019, Add patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:12 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:59 EEST 2019, Print patients method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:14 EEST 2019, Add patient method called, hospital.Logger
+INFO, Mon Jun 03 09:56:59 EEST 2019, Remove patient method called, hospital.Logger
 
-INFO, Mon Jun 03 06:42:16 EEST 2019, Add patient method called, hospital.Logger
-
-INFO, Mon Jun 03 06:42:17 EEST 2019, Add patient method called, hospital.Logger
-
-INFO, Mon Jun 03 06:42:19 EEST 2019, Add patient method called, hospital.Logger
-
-INFO, Mon Jun 03 06:42:21 EEST 2019, Add patient method called, hospital.Logger
-
-INFO, Mon Jun 03 06:42:22 EEST 2019, Print patients method called, hospital.Logger
-
-INFO, Mon Jun 03 06:42:22 EEST 2019, Remove patient method called, hospital.Logger
-
-SEVERE, Mon Jun 03 06:43:06 EEST 2019, Program termination with stack trace:
+SEVERE, Mon Jun 03 09:57:09 EEST 2019, Program termination with stack trace:
 !!! Exception: Patient with ID: 3 not found!!!
-	at hospital.Hospital.removePatient(Hospital.java:241)
+	at hospital.Hospital.removePatient(Hospital.java:243)
 	at services.HospitalSerivces.removePatient(HospitalSerivces.java:23)
 	at Main.main(Main.java:78)
 , hospital.Logger
 
-INFO, Mon Jun 03 06:43:07 EEST 2019, Remove patient method called, hospital.Logger
+INFO, Mon Jun 03 09:57:09 EEST 2019, Remove patient method called, hospital.Logger
 
-SEVERE, Mon Jun 03 06:43:20 EEST 2019, Program termination with stack trace:
+SEVERE, Mon Jun 03 09:57:10 EEST 2019, Program termination with stack trace:
 !!! Exception: Patient with ID: 5 not found!!!
-	at hospital.Hospital.removePatient(Hospital.java:241)
+	at hospital.Hospital.removePatient(Hospital.java:243)
 	at services.HospitalSerivces.removePatient(HospitalSerivces.java:23)
 	at Main.main(Main.java:93)
 , hospital.Logger
 
-INFO, Mon Jun 03 06:43:21 EEST 2019, Check if patient in hospital by ID method called, hospital.Logger
+INFO, Mon Jun 03 09:57:11 EEST 2019, Check if patient in hospital by ID method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:22 EEST 2019, Check if patient in hospital by name method called, hospital.Logger
+INFO, Mon Jun 03 09:57:11 EEST 2019, Check if patient in hospital by name method called, hospital.Logger
 
-SEVERE, Mon Jun 03 06:43:23 EEST 2019, Program termination with stack trace:
+SEVERE, Mon Jun 03 09:57:12 EEST 2019, Program termination with stack trace:
 !!! Exception: Patient: XXX not found!!!
-	at hospital.Hospital.checkIfPatientInHospitalByName(Hospital.java:316)
+	at hospital.Hospital.checkIfPatientInHospitalByName(Hospital.java:336)
 	at services.ClientServices.checkIfPatientInHospitalByName(ClientServices.java:14)
 	at Main.main(Main.java:124)
 , hospital.Logger
 
-INFO, Mon Jun 03 06:43:24 EEST 2019, Get amount to pay for patient by ID method called, hospital.Logger
+INFO, Mon Jun 03 09:57:12 EEST 2019, Get amount to pay for patient by ID method called, hospital.Logger
 
-SEVERE, Mon Jun 03 06:43:25 EEST 2019, Program termination with stack trace:
+SEVERE, Mon Jun 03 09:57:13 EEST 2019, Program termination with stack trace:
 !!! Exception: Patient with ID: 4 not found!!!
-	at hospital.Hospital.amountToPayForPatientByID(Hospital.java:327)
-	at services.HospitalSerivces.amountToPayForPatientByID(HospitalSerivces.java:39)
+	at hospital.Hospital.amountToPayForPatientByID(Hospital.java:347)
+	at services.HospitalSerivces.amountToPayForPatientByID(HospitalSerivces.java:47)
 	at Main.main(Main.java:140)
 , hospital.Logger
 
-INFO, Mon Jun 03 06:43:26 EEST 2019, Get amount to pay for patient by name method called, hospital.Logger
+INFO, Mon Jun 03 09:57:14 EEST 2019, Get amount to pay for patient by name method called, hospital.Logger
 
-SEVERE, Mon Jun 03 06:43:27 EEST 2019, Program termination with stack trace:
+SEVERE, Mon Jun 03 09:57:15 EEST 2019, Program termination with stack trace:
 !!! Exception: Patient: Andrei not found!!!
-	at hospital.Hospital.amountToPayForPatientByName(Hospital.java:338)
+	at hospital.Hospital.amountToPayForPatientByName(Hospital.java:358)
 	at services.ClientServices.amountToPayForPatientByName(ClientServices.java:22)
 	at Main.main(Main.java:156)
 , hospital.Logger
 
-INFO, Mon Jun 03 06:43:28 EEST 2019, Get floor number for specific room method called, hospital.Logger
+INFO, Mon Jun 03 09:57:15 EEST 2019, Get floor number for specific room method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:29 EEST 2019, Print patients method called, hospital.Logger
+INFO, Mon Jun 03 09:57:16 EEST 2019, Print patients method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:30 EEST 2019, Print number of available method called, hospital.Logger
+INFO, Mon Jun 03 09:57:17 EEST 2019, Print number of available method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:31 EEST 2019, Print list of departments method called, hospital.Logger
+INFO, Mon Jun 03 09:57:17 EEST 2019, Print list of departments method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:32 EEST 2019, Print list of doctors method called, hospital.Logger
+INFO, Mon Jun 03 09:57:18 EEST 2019, Print list of doctors method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:33 EEST 2019, Print doctors for each department method called, hospital.Logger
+INFO, Mon Jun 03 09:57:19 EEST 2019, Print doctors for each department method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:34 EEST 2019, Print bills ascending method called, hospital.Logger
+INFO, Mon Jun 03 09:57:19 EEST 2019, Print bills ascending method called, hospital.Logger
 
-INFO, Mon Jun 03 06:43:36 EEST 2019, Print bills descending method called, hospital.Logger
+INFO, Mon Jun 03 09:57:20 EEST 2019, Print bills descending method called, hospital.Logger
 
