@@ -26,6 +26,14 @@ public class HospitalSerivces {
         }
     }
 
+    public static void editPatient(int patientNo, String name, Hospital hospital) throws InvalidPatient {
+        try {
+            hospital.editPatient(patientNo, name);
+        } catch (InvalidPatient ex) {
+            throw ex;
+        }
+    }
+
     public static void checkIfPatientInHospitalByID(int patientID, Hospital hospital) throws InvalidPatient {
         try {
             hospital.checkIfPatientInHospitalByID(patientID);

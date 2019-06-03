@@ -243,6 +243,24 @@ public class Hospital {
         throw  new InvalidPatient(patientNo);
     }
 
+    public void editPatient(int patientNo, String name) throws InvalidPatient {
+        for (Patient p : patients) {
+            if (p.getPatientID() == patientNo) {
+                p.setName(name);
+
+                CSVReaderWriter.csvWriter(patients);
+
+                System.out.println("PATIENT FOUND FOR DELETION");
+
+                Database.updateObject(p);
+
+                return;
+            }
+        }
+
+        throw new InvalidPatient(patientNo);
+    }
+
     public int numberOfAvailableRooms() {
         int cnt = 0;
 

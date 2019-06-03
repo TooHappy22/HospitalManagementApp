@@ -17,6 +17,8 @@ public class Main {
     public static Logger logger = null;
     public static void main(String[] args) {
         Hospital hospital = Hospital.getOurInstance();
+        LoginInterface loginInterface = new LoginInterface(hospital);
+
         try {
             logger = MyLogger.getInstance();
         } catch (IOException ex) {
@@ -30,8 +32,6 @@ public class Main {
         }
 
         logger.info("PROGRAM STARTED");
-
-        LoginInterface loginInterface = new LoginInterface(hospital);
 
         boolean foundException = false;
 
